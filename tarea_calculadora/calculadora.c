@@ -63,11 +63,23 @@ int pedir_op_aritmetica(){
     printf("4. División\n");
     printf("5. Volver al menú principal\n");
 
-    opcion_op_aritmetica = leer_entero("\nDigite el numero de su elección: ");
+    opcion_op_aritmetica = leer_entero("\nDigite el número de su elección: ");
 
     return opcion_op_aritmetica;
 }
 
+int pedir_base_numerica(){
+    int base_numerica;
+    printf("");
+    printf("Binario: Digite 2\n");
+    printf("Octal: Digite 8\n");
+    printf("Decimal: Digite 10\n");
+    printf("Hexadecimal: Digite 16\n");
+    
+    base_numerica = leer_entero("Digite el número para elegir la base en la que viene el número a convertir: ");
+
+    return base_numerica;
+}
 // --- Operaciones aritméticas ---
 int sumar(int numero1, int numero2){
     int resultado = numero1 + numero2;
@@ -88,6 +100,8 @@ float dividir(int numero1, int numero2){
     float resultado = (float)numero1 / (float)numero2;
     return resultado;
 }
+
+// --- Operaciones Sistemas numericos ---
 
 // --- Programa principal ---
 int main(void) {
@@ -158,6 +172,12 @@ int main(void) {
         }
         case 2:
             /*CONVERSION ENTRE SISTEMAS NUMERICOS*/
+            limpiar_consola();
+            printf("CALCULADORA: Sistemas númericos\n\n");
+            int numero = leer_entero("Digite el número que desea convertir a otra base: ");
+            int base_numerica = pedir_base_numerica();
+
+
             break;
         case 3:
             /*COMPLEMENTO A 1*/
