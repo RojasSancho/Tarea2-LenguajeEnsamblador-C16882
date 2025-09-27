@@ -11,6 +11,7 @@ int main(void) {
     SetConsoleOutputCP(CP_UTF8); 
     #endif
 
+    // Llama al ciclo while con la ejecucion de la calculadora
     ejecutar_calculadora();
 
     return 0;
