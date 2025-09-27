@@ -3,7 +3,7 @@
 #include <math.h>
 #include <ctype.h>
 
-// --- Hacia decimal ---
+// --- HACIA DECIMAL ---
 int binario_a_decimal(const char *binario) {
     int decimal = 0;
     int longitud = strlen(binario); // Número de dígitos
@@ -71,7 +71,7 @@ int hexadecimal_a_decimal(const char *hexadecimal) {
     return decimal;
 }
 
-// --- Desde decimal ---
+// --- DESDE DECIMAL ---
 void decimal_a_binario(int decimal, char *resultado) {
     //Caso en que numero decimal es 0
     if (decimal == 0) {
@@ -80,14 +80,73 @@ void decimal_a_binario(int decimal, char *resultado) {
         return;
     }
 
-    char temp[32];  // Almacena los dígitos temporalmente
+    char temp[33]; // Almacena los dígitos en orden inverso temporalmente
     int i = 0;
     int numero = decimal; // Copia local del decimal original (para evitar modificarlo)
 
-    // Dividir el número por 2 repetidamente y guardar los restos
+    // Dividir el número por 2 repetidamente y guardar los residuos
     while (numero > 0) {
         temp[i] = (numero % 2) + '0'; // Convertir dígito a carácter
         numero /= 2;
+        i++;
+    }
+
+    // Invertir los dígitos para que queden en orden correcto
+    int j;
+    for (j = 0; j < i; j++) {
+        resultado[j] = temp[i - j - 1];
+    }
+    resultado[i] = '\0';  // Terminar string
+}
+
+void decimal_a_octal(int decimal, char *resultado) {
+    //Caso en que numero decimal es 0
+    if (decimal == 0) {
+        resultado[0] = '0';
+        resultado[1] = '\0';
+        return;
+    }
+
+    char temp[12]; // Almacena los dígitos en orden inverso temporalmente
+    int i = 0;
+    int numero = decimal; // Copia local del decimal original (para evitar modificarlo)
+
+    // Dividir el número por 8 repetidamente y guardar los residuos
+    while (numero > 0) {
+        temp[i] = (numero % 8) + '0'; // Convertir dígito a carácter
+        numero /= 8;
+        i++;
+    }
+
+    // Invertir los dígitos para que queden en orden correcto
+    int j;
+    for (j = 0; j < i; j++) {
+        resultado[j] = temp[i - j - 1];
+    }
+    resultado[i] = '\0';  // Terminar string
+}
+
+void decimal_a_hexadecimal(int decimal, char *resultado) {
+    //Caso en que numero decimal es 0
+    if (decimal == 0) {
+        resultado[0] = '0';
+        resultado[1] = '\0';
+        return;
+    }
+
+    char temp[9]; // Almacena los dígitos en orden inverso temporalmente
+    int i = 0;
+    int numero = decimal; // Copia local del decimal original (para evitar modificarlo)
+
+    // Dividir el número por 16 repetidamente y guardar los residuos
+    while (numero > 0) {
+        int residuo = numero % 16;
+        if (residuo < 10) {
+            temp[i] = residuo + '0'; // Si es el residuo esta entre 0-9
+        } else {
+            temp[i] = (residuo - 10) + 'A'; // Si es el residuo esta entre 10-15 ('A' - 'F') 
+        }
+        numero /= 16;
         i++;
     }
 
