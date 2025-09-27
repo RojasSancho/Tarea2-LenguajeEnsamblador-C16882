@@ -4,6 +4,7 @@
 #include <windows.h>
 #endif
 
+// --- Utilidades ---
 void limpiar_consola()
 {
     #ifdef _WIN32
@@ -13,7 +14,16 @@ void limpiar_consola()
     #endif
 }
 
+void esperar_enter()
+{
+    printf("Presione Enter para continuar...");
+    while (getchar() != '\n'); // Limpiar el buffer de entrada
+    getchar(); // Esperar a que el usuario presione Enter
+}
+
+// --- Menús ---
 int pedir_opcion_menu(){
+    limpiar_consola();
     int opcion_menu_principal; 
     // Menu de operaciones aritmeticas
     printf("CALCULADORA\n\n");
@@ -45,20 +55,36 @@ int pedir_op_aritmetica(){
     return opcion_op_aritmetica;
 }
 
+// --- Operaciones aritméticas ---
 int sumar(int numero1, int numero2){
     int resultado = numero1 + numero2;
     return resultado;
 }
 
-int main(void) {
+int restar(int numero1, int numero2){
+    int resultado = numero1 - numero2;
+    return resultado;
+}
 
+int multiplicar(int numero1, int numero2){
+    int resultado = numero1 * numero2;
+    return resultado;
+}
+
+int dividir(int numero1, int numero2){
+    int resultado = numero1 / numero2;
+    return resultado;
+}
+
+// --- Programa principal ---
+int main(void) {
     #ifdef _WIN32
     // Configura la consola a UTF-8 en sistemas Windows
     SetConsoleOutputCP(CP_UTF8); 
     #endif
-
-    int opcion_menu = pedir_opcion_menu();
-    switch(opcion_menu){
+    while(1){
+        int opcion_menu = pedir_opcion_menu();
+        switch(opcion_menu){
         case 1:{
             /*OPERACIONES ARITMETICAS*/
             int opcion_aritmetica = pedir_op_aritmetica();
@@ -67,23 +93,54 @@ int main(void) {
                     /*OPERACION DE SUMA*/
                     limpiar_consola();
                     int numero1, numero2;
-                    printf("CALCULADORA\n\n");
+                    printf("CALCULADORA: Suma\n\n");
                     printf("Digite el primer número: ");
                     scanf("%d", &numero1);
                     printf("Digite el segundo número: ");
                     scanf("%d", &numero2);
                     printf("El resultado de la suma es: %d\n", sumar(numero1, numero2));
+                    esperar_enter();
                     break;
                 }
-                case 2:
+                case 2: {
                     /*OPERACION DE RESTA*/
+                    limpiar_consola();
+                    int numero1, numero2;
+                    printf("CALCULADORA: Resta\n\n");
+                    printf("Digite el primer número (minuendo): ");
+                    scanf("%d", &numero1);
+                    printf("Digite el segundo número (sustraendo): ");
+                    scanf("%d", &numero2);
+                    printf("El resultado de la resta es: %d\n", restar(numero1, numero2));
+                    esperar_enter();
                     break;
-                case 3:
+                }
+                case 3: {
                     /*OPERACION DE MULTIPLICACION*/
+                    limpiar_consola();
+                    int numero1, numero2;
+                    printf("CALCULADORA: Multiplicación\n\n");
+                    printf("Digite el primer número: ");
+                    scanf("%d", &numero1);
+                    printf("Digite el segundo número: ");
+                    scanf("%d", &numero2);
+                    printf("El producto de la multiplicación es: %d\n", multiplicar(numero1, numero2));
+                    esperar_enter();
                     break;
-                case 4:
+                }
+                case 4: {
                     /*OPERACION DE DIVISION*/
+                    limpiar_consola();
+                    int numero1, numero2;
+                    printf("CALCULADORA: División\n\n");
+                    printf("Digite el primer número (dividendo): ");
+                    scanf("%d", &numero1);
+                    printf("Digite el segundo número (divisor): ");
+                    scanf("%d", &numero2);
+                    printf("El cociente de la división es: %d\n", dividir(numero1, numero2));
+                    esperar_enter();
                     break;
+                }
                 case 5:
                     break;
                 }
@@ -101,7 +158,9 @@ int main(void) {
         case 5:
             printf("Saliendo del programa...\n");
             exit(0);
+        }
     }
+    
 
     return 0;
 }
