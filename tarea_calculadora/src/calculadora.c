@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "utilidades.h"
 #include "operaciones_aritmeticas.h"
+#include "operaciones_sistemas_numericos.h"
+#include "operaciones_complemento.h"
 #include "menus.h"
 
 // --- Calculadora ---
@@ -81,17 +83,42 @@ void ejecutar_calculadora(){
             /*CONVERSION ENTRE SISTEMAS NUMERICOS*/
             limpiar_consola();
             printf("CALCULADORA: Sistemas númericos\n\n");
-            int numero = leer_entero("Digite el número que desea convertir a otra base: ");
-            int base_numerica = pedir_base_numerica();
+            char numero_str[32];
+            int base_numerica;
 
+            // Pedir el número y su base
+            printf("Ingrese el número a convertir: ");
+            scanf("%31s", numero_str); // Leer como string
+            base_numerica = pedir_base_numerica();
+
+            if (base_numerica == -1) {
+                printf("Error: Base númerica inválida.\n");
+                esperar_enter();
+                break;
+            }
+
+            int numero_en_decimal;
+
+            if (base_numerica == 2) {
+                numero_en_decimal = binario_a_decimal(numero_str);
+            } else if (base_numerica == 8) {
+                numero_en_decimal = octal_a_decimal(numero_str);
+            } else if (base_numerica == 10) {
+                numero_en_decimal = atoi(numero_str); // Convertir string decimal a int
+            } else if (base_numerica == 16) {
+                numero_en_decimal = hexadecimal_a_decimal(numero_str);
+            }
+
+            if (numero_en_decimal == -1) {
+                printf("Error: Número inválido para la base seleccionada.\n");
+                esperar_enter();
+                break;
+            }
+
+            mostrar_conversiones(numero_en_decimal);
+            esperar_enter();
             break;
         case 3:
-            /*COMPLEMENTO A 1*/
-            break;
-        case 4:
-            /*COMPLEMENTO A 2*/
-            break;
-        case 5:
             printf("Saliendo del programa...\n");
             exit(0);
         }

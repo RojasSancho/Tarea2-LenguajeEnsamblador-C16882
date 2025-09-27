@@ -2,6 +2,7 @@
 #include <string.h> 
 #include <math.h>
 #include <ctype.h>
+#include "utilidades.h"
 
 // --- HACIA DECIMAL ---
 int binario_a_decimal(const char *binario) {
@@ -156,4 +157,22 @@ void decimal_a_hexadecimal(int decimal, char *resultado) {
         resultado[j] = temp[i - j - 1];
     }
     resultado[i] = '\0';  // Terminar string
+}
+
+// --- Realizar conversion de decimal a las demas bases y mostrar al usuario ---
+void mostrar_conversiones(int numero_decimal) {
+    char resultado_binario[33];
+    char resultado_octal[12];
+    char resultado_hexadecimal[9];
+
+    decimal_a_binario(numero_decimal, resultado_binario);
+    decimal_a_octal(numero_decimal, resultado_octal);
+    decimal_a_hexadecimal(numero_decimal, resultado_hexadecimal);
+
+    limpiar_consola();
+    printf("\n--- CONVERSIONES ---\n");
+    printf("Binario: %s\n", resultado_binario);
+    printf("Octal: %s\n", resultado_octal);
+    printf("Decimal: %d\n", numero_decimal);
+    printf("Hexadecimal: %s\n\n", resultado_hexadecimal);
 }
