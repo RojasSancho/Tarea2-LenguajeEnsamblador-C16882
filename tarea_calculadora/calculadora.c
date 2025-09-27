@@ -17,7 +17,6 @@ void limpiar_consola()
 void esperar_enter()
 {
     printf("Presione Enter para continuar...");
-    while (getchar() != '\n'); // Limpiar el buffer de entrada
     getchar(); // Esperar a que el usuario presione Enter
 }
 
@@ -102,18 +101,16 @@ int main(void) {
         case 1:{
             int opcion_aritmetica;
             do {
+                int numero1, numero2;
                 /*OPERACIONES ARITMETICAS*/
                 opcion_aritmetica = pedir_op_aritmetica();
                 switch(opcion_aritmetica){
                     case 1:{
                         /*OPERACION DE SUMA*/
                         limpiar_consola();
-                        int numero1, numero2;
                         printf("CALCULADORA: Suma\n\n");
-                        printf("Digite el primer número: ");
-                        scanf("%d", &numero1);
-                        printf("Digite el segundo número: ");
-                        scanf("%d", &numero2);
+                        numero1 = leer_entero("Digite el primer número: ");
+                        numero2 = leer_entero("Digite el segundo número: ");
                         printf("El resultado de la suma es: %d\n", sumar(numero1, numero2));
                         esperar_enter();
                         break;
@@ -121,12 +118,9 @@ int main(void) {
                     case 2: {
                         /*OPERACION DE RESTA*/
                         limpiar_consola();
-                        int numero1, numero2;
                         printf("CALCULADORA: Resta\n\n");
-                        printf("Digite el primer número (minuendo): ");
-                        scanf("%d", &numero1);
-                        printf("Digite el segundo número (sustraendo): ");
-                        scanf("%d", &numero2);
+                        numero1 = leer_entero("Digite el primer número (minuendo): ");
+                        numero2 = leer_entero("Digite el segundo número (sustraendo): ");
                         printf("El resultado de la resta es: %d\n", restar(numero1, numero2));
                         esperar_enter();
                         break;
@@ -134,12 +128,9 @@ int main(void) {
                     case 3: {
                         /*OPERACION DE MULTIPLICACION*/
                         limpiar_consola();
-                        int numero1, numero2;
                         printf("CALCULADORA: Multiplicación\n\n");
-                        printf("Digite el primer número: ");
-                        scanf("%d", &numero1);
-                        printf("Digite el segundo número: ");
-                        scanf("%d", &numero2);
+                        numero1 = leer_entero("Digite el primer número: ");
+                        numero2 = leer_entero("Digite el segundo número: ");
                         printf("El producto de la multiplicación es: %d\n", multiplicar(numero1, numero2));
                         esperar_enter();
                         break;
@@ -147,12 +138,9 @@ int main(void) {
                     case 4: {
                         /*OPERACION DE DIVISION*/
                         limpiar_consola();
-                        int numero1, numero2;
                         printf("CALCULADORA: División\n\n");
-                        printf("Digite el primer número (dividendo): ");
-                        scanf("%d", &numero1);
-                        printf("Digite el segundo número (divisor): ");
-                        scanf("%d", &numero2);
+                        numero1 = leer_entero("Digite el primer número (dividendo): ");
+                        numero2 = leer_entero("Digite el segundo número (divisor): ");
                         if (numero2 == 0){
                             printf("Error: No se puede dividir un número entre cero.\n");
                             esperar_enter();
