@@ -3,6 +3,10 @@
 
 Número de carné: C16882
 
+### Requisitos
+- Sistema operativo: Windows
+- Compilador: GCC (MinGW o TDM-GCC)
+
 ## Instrucciones de compilación
 1. Abrir la terminal o consola
 2. Ubicarse en la carpeta en la cual se encuentra el archivo compilar llamado `compilar.bat`
@@ -11,4 +15,8 @@ Número de carné: C16882
 ```
 .\compilar.bat
 ```
-4. Con el anterior comando los archivos .c del programa se van a compilar y el programa se va a ejecutar.
+4. El comando compila y ejecuta automáticamente todos los archivos .c del proyecto.
+
+### Uso
+- Ingresar los números y la operación según las indicaciones en pantalla.
+- Para conversiones, ingresar número y su base.
