@@ -3,9 +3,10 @@
 
 Número de carné: C16882
 
-### Requisitos
-- Sistema operativo: Windows
-- Compilador: GCC (MinGW o TDM-GCC)
+### Entorno de compilación
+- Sistema operativo: Windows 11 (64 bits)
+- Compilador: GCC incluido en MinGW
+- Editor/IDE: Visual Studio Code
 
 ### Instrucciones de compilación
 1. Abrir la terminal o consola.
