@@ -11,4 +11,4 @@ Número de carné: C16882
 ```
 .\compilar.bat
 ```
-4. Los archivos .c se compilarán y se ejecutará el programa.
+4. Con el anterior comando los archivos .c del programa se van a compilar y el programa se va a ejecutar.
