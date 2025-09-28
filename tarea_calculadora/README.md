@@ -37,7 +37,7 @@ tarea_calculadora/
 ```
 .\compilar.bat
 ```
-> Esto compila todos los archivos `.c` dentro de `src/` e incluye los `.h` de `include/`. Luego ejecuta el programa automáticamente.
+> Esto compila todos los archivos `.c` dentro de `src/` e incluye los `.h` de `include/`. Luego ejecuta el programa `(calculadora.exe)` automáticamente.
 
 ### Uso
 - Ingresar los números y la operación según las indicaciones en pantalla.
