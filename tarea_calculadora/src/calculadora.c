@@ -65,7 +65,7 @@ void ejecutar_calculadora(){
                     numero2 = leer_entero("Digite el segundo número (divisor): ");
                     if (numero2 == 0)
                     {
-                        printf("Error: No se puede dividir un número entre cero.\n");
+                        printf("\nError: No se puede dividir un número entre cero.\n");
                         esperar_enter();
                         break; // vuelve al menu
                     }
@@ -89,13 +89,7 @@ void ejecutar_calculadora(){
             // Pedir el número y su base
             printf("Ingrese el número a convertir: ");
             scanf("%31s", numero_str); // Leer como string
-            base_numerica = pedir_base_numerica();
-
-            if (base_numerica == -1) {
-                printf("Error: Base númerica inválida.\n");
-                esperar_enter();
-                break;
-            }
+            base_numerica = pedir_base_numerica(numero_str);
 
             int numero_en_decimal;
 
@@ -104,13 +98,17 @@ void ejecutar_calculadora(){
             } else if (base_numerica == 8) {
                 numero_en_decimal = octal_a_decimal(numero_str);
             } else if (base_numerica == 10) {
+                if (!validar_entero_positivo(numero_str)) {
+                    printf("\nError: Número decimal inválido.\n");
+                    esperar_enter();
+                    break;
+                }
                 numero_en_decimal = atoi(numero_str); // Convertir string decimal a int
             } else if (base_numerica == 16) {
                 numero_en_decimal = hexadecimal_a_decimal(numero_str);
             }
 
             if (numero_en_decimal == -1) {
-                printf("Error: Número inválido para la base seleccionada.\n");
                 esperar_enter();
                 break;
             }

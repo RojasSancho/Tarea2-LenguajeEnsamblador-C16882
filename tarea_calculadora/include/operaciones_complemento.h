@@ -5,4 +5,6 @@
 void complemento_a_uno(const char *binario, char *resultado);
 void complemento_a_dos(const char *binario, char *resultado);
 
+void mostrar_complementos();
+
 #endif

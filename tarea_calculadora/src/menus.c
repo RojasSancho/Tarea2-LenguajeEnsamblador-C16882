@@ -34,20 +34,26 @@ int pedir_op_aritmetica()
     return opcion_op_aritmetica;
 }
 
-int pedir_base_numerica()
+int pedir_base_numerica(const char * numero)
 {
     int base_numerica;
-    printf("\nBASE:");
-    printf("\nBinario: Digite 2\n");
-    printf("Octal: Digite 8\n");
-    printf("Decimal: Digite 10\n");
-    printf("Hexadecimal: Digite 16\n");
+    do {
+        limpiar_consola();
+        printf("Número digitado: %s", numero);
+        printf("\n\nBASE:");
+        printf("\nBinario: Digite 2\n");
+        printf("Octal: Digite 8\n");
+        printf("Decimal: Digite 10\n");
+        printf("Hexadecimal: Digite 16\n");
 
-    base_numerica = leer_entero("\nDigite la opción que corresponda a la base original de su número: ");
+        base_numerica = leer_entero("\nDigite la opción que corresponda a la base original de su número: ");
 
-    if (base_numerica != 2 || base_numerica != 8 || base_numerica != 10 || base_numerica != 16) {
-        return -1; // Retorna -1 para indicar error
-    }
+        if (base_numerica != 2 && base_numerica != 8 && base_numerica != 10 && base_numerica != 16) {
+            base_numerica = -1; // -1 para indicar error
+            printf("\nLa base númerica digitada no es válida, intente de nuevo.\n");
+            esperar_enter();
+        }
+    } while (base_numerica == -1);
 
     return base_numerica;
 }

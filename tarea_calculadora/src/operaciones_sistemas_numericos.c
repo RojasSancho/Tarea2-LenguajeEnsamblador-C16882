@@ -3,6 +3,7 @@
 #include <math.h>
 #include <ctype.h>
 #include "utilidades.h"
+#include "operaciones_complemento.h"
 
 // --- HACIA DECIMAL ---
 int binario_a_decimal(const char *binario) {
@@ -13,7 +14,7 @@ int binario_a_decimal(const char *binario) {
     for (int i = 0; i < longitud; i++) {
         // Validar que realmente sea un numero en binario
         if (binario[i] != '0' && binario[i] != '1') {
-            printf("Error: carácter inválido '%c' en binario.\n", binario[i]);
+            printf("\nError: El número a convertir tiene carácteres inválidos en binario.\n");
             return -1; // Retorna -1 para indicar error
         }
 
@@ -34,7 +35,7 @@ int octal_a_decimal(const char *octal) {
         // Validar que realmente sea un numero en octal
         if (octal[i] < '0' || octal[i] > '7')
         {
-            printf("Error: carácter inválido '%c' en octal.\n", octal[i]);
+            printf("\nError: El número a convertir tiene carácteres inválidos en octal.\n");
             return -1; // Retorna -1 para indicar error
         }
 
@@ -61,7 +62,7 @@ int hexadecimal_a_decimal(const char *hexadecimal) {
         } else if (digito_char >= 'A' && digito_char <= 'F') {
             digito = 10 + (digito_char - 'A');
         } else {
-            printf("Error: carácter inválido '%c' en hexadecimal.\n", hexadecimal[i]);
+            printf("\nError: El número a convertir tiene carácteres inválidos en hexadecimal.\n");
             return -1; // Retorna -1 para indicar error
         }
 
@@ -165,6 +166,7 @@ void mostrar_conversiones(int numero_decimal) {
     char resultado_octal[12];
     char resultado_hexadecimal[9];
 
+    // --- Conversiones entre sistemas numericos
     decimal_a_binario(numero_decimal, resultado_binario);
     decimal_a_octal(numero_decimal, resultado_octal);
     decimal_a_hexadecimal(numero_decimal, resultado_hexadecimal);
@@ -175,4 +177,14 @@ void mostrar_conversiones(int numero_decimal) {
     printf("Octal: %s\n", resultado_octal);
     printf("Decimal: %d\n", numero_decimal);
     printf("Hexadecimal: %s\n\n", resultado_hexadecimal);
+
+    // Complemento a 1 y 2
+    char complemento_a_1[33];
+    char complemento_a_2[33];
+    complemento_a_uno(resultado_binario, complemento_a_1);
+    complemento_a_dos(resultado_binario, complemento_a_2);
+
+    printf("\n--- COMPLEMENTOS ---\n");
+    printf("Complemento a 1: %s\n", complemento_a_1);
+    printf("Complemento a 2: %s\n\n", complemento_a_2);
 }
