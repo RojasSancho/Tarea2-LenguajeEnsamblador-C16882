@@ -33,7 +33,7 @@ int leer_entero(char *mensaje)
         }
         else
         {
-            printf("Entrada inválida. Por favor, ingrese un número entero.\n\n");
+            printf("Entrada inválida. Por favor, ingrese un número entero.\n");
             while ((c = getchar()) != '\n' && c != EOF)
                 ; // limpiar buffer
         }

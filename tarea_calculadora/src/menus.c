@@ -40,7 +40,7 @@ int pedir_base_numerica(const char * numero)
     do {
         limpiar_consola();
         printf("Número digitado: %s", numero);
-        printf("\n\nBASE:");
+        printf("\n\n--- BASE--- ");
         printf("\nBinario: Digite 2\n");
         printf("Octal: Digite 8\n");
         printf("Decimal: Digite 10\n");

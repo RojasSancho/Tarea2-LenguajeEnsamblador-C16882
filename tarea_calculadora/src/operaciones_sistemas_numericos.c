@@ -170,8 +170,7 @@ void mostrar_conversiones(int numero_decimal) {
     decimal_a_binario(numero_decimal, resultado_binario);
     decimal_a_octal(numero_decimal, resultado_octal);
     decimal_a_hexadecimal(numero_decimal, resultado_hexadecimal);
-
-    limpiar_consola();
+    
     printf("\n--- CONVERSIONES ---\n");
     printf("Binario: %s\n", resultado_binario);
     printf("Octal: %s\n", resultado_octal);

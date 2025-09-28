@@ -113,6 +113,9 @@ void ejecutar_calculadora(){
                 break;
             }
 
+            limpiar_consola();
+            printf("Número original: %s\n", numero_str);
+            printf("Base original: %d\n\n", base_numerica);
             mostrar_conversiones(numero_en_decimal);
             esperar_enter();
             break;
