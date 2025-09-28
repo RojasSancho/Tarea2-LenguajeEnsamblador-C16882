@@ -17,7 +17,7 @@ Programa de consola (CLI) que permite:
 - Calcular complementos a 1 y 2.
 
 ### Estructura de archivos
-Proyecto/
+tarea_calculadora/
 
     include/      # Archivos .h
     
