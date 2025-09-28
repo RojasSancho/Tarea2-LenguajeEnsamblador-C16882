@@ -5,11 +5,4 @@ Número de carné: C16882
 | **Tareas**                                                | **Carpeta**       | 
 |-----------------------------------------------------------|-------------------|
 | Calculadora: Operaciones Aritméticas y Sistemas Numéricos | tarea_calculadora |
-|                                                           |                   |
-|                                                           |                   |
-|                                                           |                   |
-|                                                           |                   |
-|                                                           |                   |
-|                                                           |                   |
-|                                                           |                   | 
-|                                                           |                   |
+
