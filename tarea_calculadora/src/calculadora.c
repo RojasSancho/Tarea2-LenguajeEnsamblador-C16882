@@ -30,7 +30,7 @@ void ejecutar_calculadora(){
                     printf("CALCULADORA: Suma\n\n");
                     numero1 = leer_entero("Digite el primer número: ");
                     numero2 = leer_entero("Digite el segundo número: ");
-                    printf("El resultado de la suma es: %d\n", sumar(numero1, numero2));
+                    printf("Resultado: %d + %d = %d\n", numero1, numero2, sumar(numero1, numero2));
                     esperar_enter();
                     break;
                 }
@@ -41,7 +41,7 @@ void ejecutar_calculadora(){
                     printf("CALCULADORA: Resta\n\n");
                     numero1 = leer_entero("Digite el primer número (minuendo): ");
                     numero2 = leer_entero("Digite el segundo número (sustraendo): ");
-                    printf("El resultado de la resta es: %d\n", restar(numero1, numero2));
+                    printf("Resultado: %d - %d = %d\n", numero1, numero2, restar(numero1, numero2));
                     esperar_enter();
                     break;
                 }
@@ -52,7 +52,7 @@ void ejecutar_calculadora(){
                     printf("CALCULADORA: Multiplicación\n\n");
                     numero1 = leer_entero("Digite el primer número: ");
                     numero2 = leer_entero("Digite el segundo número: ");
-                    printf("El producto de la multiplicación es: %d\n", multiplicar(numero1, numero2));
+                    printf("Resultado: %d * %d = %d\n", numero1, numero2, multiplicar(numero1, numero2));
                     esperar_enter();
                     break;
                 }
@@ -69,7 +69,7 @@ void ejecutar_calculadora(){
                         esperar_enter();
                         break; // vuelve al menu
                     }
-                    printf("El cociente de la división es: %.2f\n", dividir(numero1, numero2));
+                    printf("Resultado: %d / %d = %.2f\n", numero1, numero2, dividir(numero1, numero2));
                     esperar_enter();
                     break;
                 }

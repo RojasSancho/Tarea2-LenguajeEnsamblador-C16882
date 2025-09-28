@@ -25,17 +25,13 @@ int leer_entero(char *mensaje)
     while (1)
     {
         printf("%s", mensaje);
-        if (scanf("%d", &numero) == 1)
-        {
-            while ((c = getchar()) != '\n' && c != EOF)
-                ; // limpiar buffer
+        if (scanf("%d", &numero) == 1) {
+            while ((c = getchar()) != '\n' && c != EOF); // limpiar buffer
             return numero;
         }
-        else
-        {
-            printf("Entrada inválida. Por favor, ingrese un número entero.\n");
-            while ((c = getchar()) != '\n' && c != EOF)
-                ; // limpiar buffer
+        else {
+            printf("Entrada inválida. Por favor, ingrese un número entero.\n\n");
+            while ((c = getchar()) != '\n' && c != EOF); // limpiar buffer
         }
     }
 }
@@ -44,8 +40,7 @@ int leer_entero_positivo(char *mensaje) {
     int numero;
     do {
         numero = leer_entero(mensaje); // Llama a tu función existente
-        if (numero < 0)
-        {
+        if (numero < 0) {
             printf("Error: ingrese un número positivo.\n");
         }
     } while (numero < 0);
