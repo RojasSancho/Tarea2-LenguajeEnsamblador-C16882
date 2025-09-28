@@ -1,4 +1,4 @@
-## Calculadora: Operaciones Aritméticas y Conversiones Sistemas Numéricos
+## Calculadora: Operaciones Aritméticas y Conversión Sistemas Numéricos
 ## Estudiante: Hermes Josué Rojas Sancho
 
 Número de carné: C16882
