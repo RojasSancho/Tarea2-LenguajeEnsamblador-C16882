@@ -18,12 +18,11 @@ Programa de consola (CLI) que permite:
 
 ### Estructura de archivos
 Proyecto/
-├── include/       # Archivos .h
-│   └── *.h
-├── src/           # Archivos .c
-│   └── *.c
-└── compilar.bat   # Script para compilar y ejecutar
-
+    include/      # Archivos .h
+        *.h
+    src/          # Archivos .c
+        *.c
+    compilar.bat  # Script para compilar y ejecutar
 
 ### Instrucciones de compilación
 1. Abrir la terminal o consola.
