@@ -8,6 +8,19 @@ Número de carné: C16882
 - Compilador: GCC incluido en MinGW
 - Editor/IDE: Visual Studio Code
 
+> Nota: Se recomienda usar este mismo entorno para evitar problemas de compilación.
+
+### Estructura de archivos
+Proyecto/
+│
+├─ include/ <- Archivos .h
+│ └─ *.h
+│
+├─ src/ <- Archivos .c
+│ └─ *.c
+│
+└─ compilar.bat <- Script para compilar y ejecutar
+
 ### Instrucciones de compilación
 1. Abrir la terminal o consola.
 2. Ubicarse en la carpeta en la cual se encuentra el archivo compilar llamado `compilar.bat`.
@@ -16,7 +29,7 @@ Número de carné: C16882
 ```
 .\compilar.bat
 ```
-4. El comando compila y ejecuta automáticamente todos los archivos .c del proyecto.
+> Esto compila todos los archivos `.c` dentro de `src/` e incluye los `.h` de `include/`. Luego ejecuta el programa automáticamente.
 
 ### Uso
 - Ingresar los números y la operación según las indicaciones en pantalla.
