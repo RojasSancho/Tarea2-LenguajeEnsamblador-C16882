@@ -5,5 +5,5 @@ Número de carné: C16882
 | **Nombre Tarea**                                                | **Carpeta**       | 
 |-----------------------------------------------------------------|-------------------|
 | Calculadora: Operaciones Aritméticas y Sistemas Numéricos       | tarea_calculadora |
-| Copia y transformación de cadenas                               | tarea_cadenas_NASM|
+| Tarea 5 - Copia y transformación de cadenas                               | tarea_cadenas_NASM|
 
