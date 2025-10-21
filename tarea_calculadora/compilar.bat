@@ -1,8 +1,8 @@
 @echo off
-:: Borra compilación anterior si existe
+:: Borrar compilación anterior si existe
 if exist calculadora.exe del calculadora.exe
 
-:: Compila el código y busca los headers
+:: Compilar el código y busca los headers
 gcc -Iinclude src\main.c src\utilidades.c src\operaciones_aritmeticas.c src\operaciones_sistemas_numericos.c src\operaciones_complemento.c src\menus.c src\calculadora.c -o calculadora.exe
 if %errorlevel% neq 0 (
     echo Hubo un error de compilacion
@@ -10,7 +10,7 @@ if %errorlevel% neq 0 (
     exit /b
 )
 
-:: Ejecuta el programa
+:: Ejecutar el programa
 calculadora.exe
 
 pause

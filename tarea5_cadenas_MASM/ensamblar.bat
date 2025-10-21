@@ -1,5 +1,5 @@
 @echo off
-:: Borra compilación anterior si existe
+:: Borrar compilación anterior si existe
 if exist tarea5_lenguajeensamblador.exe del tarea5_cadenas_MASM.exe
 if exist tarea5_lenguajeensamblador.obj del tarea5_cadenas_MASM.obj
 
@@ -24,7 +24,7 @@ if %errorlevel% neq 0 (
     exit /b
 )
 
-:: Ejecuta el programa
+:: Ejecutar el programa
 %EXE%
 
 pause
