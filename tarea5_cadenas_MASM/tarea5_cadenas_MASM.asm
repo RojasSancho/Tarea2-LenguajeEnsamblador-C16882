@@ -1,5 +1,5 @@
 INCLUDE deps\Irvine32.inc                       ; incluir WriteString, Crlf, DumpRegs, DumpMem
-INCLUDELIB deps\Irvine32.lib                ; enlazar la biblioteca
+INCLUDELIB deps\Irvine32.lib                    ; enlazar la biblioteca
 
 .data
     ; cadena original terminada en byte nulo ('\0')
