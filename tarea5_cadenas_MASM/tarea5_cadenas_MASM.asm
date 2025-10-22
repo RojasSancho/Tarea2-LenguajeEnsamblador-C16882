@@ -30,7 +30,6 @@ reverse_loop:
     mov edx, OFFSET destino                     ; cargar en EDX la dirección de 'destino'
     call WriteString                            ; imprimir en consola lo que apunte EDX
     call Crlf                                   ; salto de línea
-    call DumpRegs                               ; muestra el contenido de los registros (para depuración)
     exit          
 main ENDP
 
