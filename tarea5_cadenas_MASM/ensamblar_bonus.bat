@@ -1,12 +1,12 @@
 @echo off
 :: Borrar compilación anterior si existe
-if exist tarea5_cadenas_MASM.exe del tarea5_cadenas_MASM.exe
-if exist tarea5_cadenas_MASM.obj del tarea5_cadenas_MASM.obj
-
+if exist bonus_tarea5_cadenas_MASM.exe del bonus_tarea5_cadenas_MASM.exe
+if exist bonus_tarea5_cadenas_MASM.obj del bonus_tarea5_cadenas_MASM.obj
+    
 :: Variables del proyecto
-set SRC=tarea5_cadenas_MASM.asm
-set OBJ=tarea5_cadenas_MASM.obj
-set EXE=tarea5_cadenas_MASM.exe
+set SRC=bonus_tarea5_cadenas_MASM.asm
+set OBJ=bonus_tarea5_cadenas_MASM.obj
+set EXE=bonus_tarea5_cadenas_MASM.exe
 
 :: Ensamblar
 ml /c /coff %SRC% 
