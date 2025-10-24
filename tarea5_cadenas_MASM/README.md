@@ -52,7 +52,7 @@ tarea5_cadenas_MASM/
 Programa de consola (CLI) hecho con lenguaje ensamblador MASM, que permite:
 
 - Copiar una cadena de caracteres de origen a una cadena de destino invirtiendo el orden de los caracteres.
-- Ademas, identificar si cada letra de la cadena es minuscula o mayuscula y convertirla en su inversa (utilizando procesamiento condicional).
+- Además, identificar si cada letra de la cadena es minúscula o mayúscula y convertirla en su inversa (utilizando procesamiento condicional).
 
 ### Instrucciones de compilación
 
@@ -64,4 +64,4 @@ Programa de consola (CLI) hecho con lenguaje ensamblador MASM, que permite:
 .\ensamblar_bonus.bat
 ```
 
-> Esto ensambla el archivo `.asm` y linkea las dependencias `.lib` y `.inc` que están dentro de `deps/`. Luego ejecuta el programa `(tarea5_cadenas_MASM.exe)` automáticamente.
+> Esto ensambla el archivo `.asm` y linkea las dependencias `.lib` y `.inc` que están dentro de `deps/`. Luego ejecuta el programa `(bonus_tarea5_cadenas_MASM.exe)` automáticamente.
