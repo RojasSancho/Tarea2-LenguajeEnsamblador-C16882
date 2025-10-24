@@ -45,16 +45,16 @@ tarea5_cadenas_MASM/
 
 > Esto ensambla el archivo `.asm` y linkea las dependencias `.lib` y `.inc` que están dentro de `deps/`. Luego ejecuta el programa `(tarea5_cadenas_MASM.exe)` automáticamente.
 
-## Enunciado Bonus (opcional)
+## Enunciado *Bonus* (opcional)
 
-### Descripción (Bonus)
+### Descripción *(Bonus)*
 
 Programa de consola (CLI) hecho con lenguaje ensamblador MASM, que permite:
 
 - Copiar una cadena de caracteres de origen a una cadena de destino invirtiendo el orden de los caracteres.
 - Además, identificar si cada letra de la cadena es minúscula o mayúscula y convertirla en su inversa (utilizando procesamiento condicional).
 
-### Instrucciones de compilación (Bonus)
+### Instrucciones de compilación *(Bonus)*
 
 1. Abrir la terminal o consola.
 2. Ubicarse en la carpeta en la cual se encuentra el archivo llamado `ensamblar_bonus.bat`.
