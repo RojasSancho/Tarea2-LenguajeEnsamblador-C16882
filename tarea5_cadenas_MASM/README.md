@@ -23,9 +23,11 @@ Programa de consola (CLI) hecho con lenguaje ensamblador MASM, que permite:
 tarea5_cadenas_MASM/
 
     tarea5_cadenas_MASM.asm # Codigo fuente en ensamblador MASM
+    bonus_tarea5_cadenas_MASM.asm # Enunciado BONUS / Codigo fuente en ensamblador MASM
 
     ensamblar.bat  # Script para ensamblar, linkear y ejecutar
-
+    ensamblar_bonus.bat # Script para ensamblar, linkear y ejecutar
+    
     deps/   # Dependencias del proyecto
         *.inc
         *.lib
