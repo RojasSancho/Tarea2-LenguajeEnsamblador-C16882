@@ -11,10 +11,11 @@ main PROC
     call WriteString
     call Crlf
 
+; RESPUESTA PREGUNTA 21 - SECCION 1
 espera:
     mov ah,12h        ; obtener las banderas del teclado
     int 16h           ; interrupcion de BIOS para teclado
-    test al,04h       ; verificar si se ha oprimido la tecla CTRL
+    test al,04h       ; verificar si se ha oprimido cualquier tecla CTRL
     jz espera         ; si no se ha oprimido, repetir el ciclo
 
     mov edx, OFFSET msg2
